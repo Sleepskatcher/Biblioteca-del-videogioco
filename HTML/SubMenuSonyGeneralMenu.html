@@ -1,0 +1,23 @@
+<div class="SubMenu">
+    <form action="../PHP/phpPrincipal.php" method="get">
+        <fieldset>
+            <legend>Scelta <span xml:lang="en" lang="en">Sony</span></legend>
+
+            <input type="hidden" name="menu" value="catalogo"/>
+            <input type="hidden" name="console" value="sony"/>
+            <input type="hidden" name="start" value="0"/>
+            <input type="hidden" name="finish" value="20"/>
+
+            <p>Selezionare solo un'opzione:</p>
+            <p>
+                <input id="PlayStation3" type="radio" name="radioSony" value="PlayStation3" $RADIOPLAYSTATION3$ tabindex="15"/>
+                <label for="PlayStation3"><span xml:lang="en" lang="en">Playstation</span> 3</label>
+                <input id="PlayStation4" type="radio" name="radioSony" value="PlayStation4" $RADIOPLAYSTATION4$ tabindex="16"/>
+                <label for="PlayStation4"><span xml:lang="en" lang="en">Playstation</span> 4</label>
+            </p>
+
+            <button type="submit" tabindex="17">Conferma</button>
+
+        </fieldset>
+    </form>
+</div>

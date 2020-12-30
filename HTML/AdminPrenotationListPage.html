@@ -1,0 +1,46 @@
+$LISTPAGECOMEBACK$
+
+<div id="ModifyPrenotation">
+    <form action="phpFormAdminPrenotationListPage.php?menu=modificapren" method="post">
+        <fieldset>
+            <legend>Modifica prenotazione</legend>
+
+            $ERRORADMINPRENOTATIONLISTPAGE$
+
+            <p>Pagina per modificare la prenotazione. Attenzione: una volta inserita la data di restituzione non si potrà più togliere. Inserire le date solo nel mommento in cui il gioco verrà rititato o consegnato effettivamente.</p>
+
+            $LISTPAGEAUTOINCREMENTALCODE$
+
+            $LISTPAGEHIDDENCODE$
+
+            <label for="ListPageUsername">Nome utente:</label>
+            <input id="ListPageUsername" value="$VALUELISTPAGEUSERNAME$"  disabled="disabled"/>
+
+            <label for="ListPageVideogameCode">Codice videogioco:</label>
+            <input id="ListPageVideogameCode" value="$VALUELISTPAGEVIDEOGAMECODE$" disabled="disabled"/>
+
+            <label for="ListPageVideogameName">Nome videogioco:</label>
+            <input id="ListPageVideogameName" value="$VALUELISTPAGEVIDEOGAMENAME$" disabled="disabled"/>
+
+            <label for="ListPageConsole" xml:lang="en" lang="en">Console:</label>
+            <input id="ListPageConsole" value="$VALUELISTPAGECONSOLE$" disabled="disabled"/>
+
+            <label for="ListPagePrenotationDate">Data prenotazione:</label>
+            <input id="ListPagePrenotationDate" value="$VALUELISTPAGEPRENOTATIONDATE$" disabled="disabled"/>
+
+            <label for="ListPagePickUpDate">Data di ritiro:</label>
+            <input id="ListPagePickUpDate" onchange="controlDatePr()" onfocusout="controlDatePr()" type="date" tabindex="14" name="listPagePickUpDate" value="$VALUELISTPAGEPICKUPDATE$"/>
+            <p id="AvvisoDatePr" class="JavaWarning"></p>
+
+            <label for="ListPageDeliverDate">Data restituzione:</label>
+            <input id="ListPageDeliverDate"  onchange="controlDateDv()" onfocusout="controlDateDv()" type="date" tabindex="15" name="listPageDeliverDate" value="$VALUELISTPAGEDELIVERDATE$"/>
+            <p id="AvvisoDateDv" class="JavaWarning"></p>
+
+            <p>Se non è ancora stata inserita la data di restituzione inserirla e poi confermare per essere sicuri del prezzo che l'utente andrà a pagare. Costo da pagare: $VALUELISTPAGETOTALCOST$</p>
+
+            <button type="reset" tabindex="16" xml:lang="en" lang="en">Reset</button>
+            <button type="submit" id="ButtonDate" tabindex="17">Conferma</button>
+
+        </fieldset>
+    </form>
+</div>

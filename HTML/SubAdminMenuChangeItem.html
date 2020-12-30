@@ -1,0 +1,85 @@
+$LINKCOMEBACK$
+
+<form enctype="multipart/form-data" action="../PHP/phpFormModifyItemPage.php?menu=modificavid" method="post">
+    <fieldset class="AddModifyItem">
+        <legend>Modifica videogioco</legend>
+
+        $ERRORSUBADMINMENUCHANGEITEMPAGE$
+
+        <p>Tutti i campi sono obbligatori. Ricordarsi di reinserire tutti i campi disponibili e di non cancellare i campi che non si vanno a modificare.</p>
+
+        $CHANGEITEMVIDEOGAMEAUTOINCREMENTALCODE$
+
+        $CHANGEITEMVIDEOGAMEHIDDENCODE$
+
+        <label for="VideogameName" title="Modifica titolo">Titolo videogioco:</label>
+        <textarea id="VideogameName" onkeyup="controlTitleMod()" onfocusout="controlTitleMod()" rows="2" cols="100" title="Modifica titolo" tabindex="13" placeholder="titolo videogioco" maxlength="200" name="vidName" required ="required">$VALUEVIDEOGAMENAME$</textarea>
+        <p id="AvvisoVideogameTitleMod" class="JavaWarning"></p>
+
+        <label for="VideogameImage" title="Copertina videogioco">Copertina videogioco:</label>
+        <input id="VideogameImage" title="Copertina videogioco" type="file" tabindex="14" name="vidImage" accept="image/jpeg, image/png"/>
+        <p>La dimensione massima dell'immagine non deve superare i 2 <abbr title="Mega Byte">MB</abbr>. Il nome dell'immagine non deve contenere caratteri speciali (e.g. ', ", / etc...)</p>
+         <p id="AvvisoImageMod" class="JavaWarning"></p>
+
+        <label for="VideogameExitDate" onchange="controlDateMod()" onfocusout="controlDateMod()" title="Modifica data di uscita">Data di uscita:</label>
+        <input id="VideogameExitDate" title="Modifica data di uscita" type="date" tabindex="15" name="vidExitDate" value="$VALUEVIDEOGAMEEXITDATE$" required="required"/>
+        <p id="AvvisoDateMod" class="JavaWarning"></p>
+
+        <label for="VideogamePegi" xml:lang="en" lang="en">Pegi:</label>
+        <select id="VideogamePegi" title="Modifica Pegi" tabindex="16" name="vidPegi" required="required">
+            <option value="" disabled="disabled" xml:lang="en" lang="en">Pegi</option>
+            <option value="3" $SELCETPEGI3$>3</option>
+            <option value="7" $SELECTPEGI7$>7</option>
+            <option value="12" $SELECTPEGI12$>12</option>
+            <option value="16" $SELECTPEGI16$>16</option>
+            <option value="18" $SELECTPEGI18$>18</option>
+        </select>
+
+        <label for="VideogameKind" title="Modifica genere videogioco">Genere videogioco:</label>
+        <textarea id="VideogameKind" onchange="controlKindMod()" onfocusout="controlKindMod()" rows="2" cols="100" title="Modifica genere videogioco" tabindex="17" placeholder="genere videogioco" maxlength="200" name="vidKind" required="required">$VALUEVIDEOGAMEKIND$</textarea>
+        <p id="AvvisoKindMod" class="JavaWarning"></p>
+
+        <label for="VideogameDescription" title="Modifica descrizione">Descrizione videogioco:</label>
+        <textarea id="VideogameDescription" onkeyup="controlDescriptionMod()" onfocusout="controlDescriptionMod()" title="Modifica descrizione" rows="20" cols="100" tabindex="18" placeholder="descrizione videogioco" maxlength="1000" name="vidDescription" required="required">$VALUEVIDEOGAMEDESCRIPTION$</textarea>
+        <p id="AvvisoDescriptionMod" class="JavaWarning"></p>
+
+        <label for="VideogamePrice" title="Modifica prezzo noleggio giornaliero">Prezzo noleggio giornaliero:</label>
+        <input id="VideogamePrice" onkeyup="controlPriceMod()" onfocusout="controlPriceMod()" title="Modifica prezzo noleggio giornaliero" type="number" tabindex="19" min="0.01" max="10" step=".01" name="vidPrice" value="$VALUEVIDEOGAMEPRICE$" required="required"/>
+        <p id="AvvisoPrice" class="JavaWarning"></p>
+
+        <label for="VideogameBestSeller" title="Modifica Best Seller" xml:lang="en" lang="en">Best Seller:</label>
+        <select id="VideogameBestSeller" title="Modifica Best Seller" tabindex="20" name="vidBestSel" required="required">
+            <option value="" disabled="disabled" xml:lang="en" lang="en">Best Seller</option>
+            <option value="1" $SELECTBESTSELLERSI$>Si</option>
+            <option value="0" $SELECTBESTSELLERNO$>No</option>
+        </select>
+
+        <p class="NotAll">Questi campi non bisogna selezionarli tutti. Selezionarne almeno uno. Selezionare la <span xml:lang="en" lang="en">console</span> per cui é disponibile il videogioco e il numero di copie del videogioco per ogni <span xml:lang="en" lang="en">console</span></p>
+
+        <p xml:lang="en" lang="en">Microsoft:</p>
+
+        $INPUTXBOX360$
+
+        $INPUTXBOXONE$
+
+        <p>Nintendo:</p>
+
+        $INPUTWII$
+
+        $INPUTWIIU$
+
+        $INPUTSWITCH$
+
+        <p xml:lang="en" lang="en">Sony:</p>
+
+        $INPUTPLAYSTATION3$
+
+        $INPUTPLAYSTATION4$
+
+        $SUBADMINMENUADDITEMHIDDENBOOL$
+
+        <button type="reset" tabindex="43" xml:lang="en" lang="en">Reset</button>
+        <button id="ConfirmButtonMod" type="submit" tabindex="44">Conferma</button>
+
+    </fieldset>
+</form>

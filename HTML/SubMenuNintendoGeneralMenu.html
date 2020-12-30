@@ -1,0 +1,25 @@
+<div class="SubMenu">
+    <form action="../PHP/phpPrincipal.php" method="get">
+        <fieldset>
+            <legend>Scelta Nintendo</legend>
+
+            <input type="hidden" name="menu" value="catalogo"/>
+            <input type="hidden" name="console" value="nintendo"/>
+            <input type="hidden" name="start" value="0"/>
+            <input type="hidden" name="finish" value="20"/>
+
+            <p>Selezionare solo un'opzione:</p>
+            <p>
+                <input id="Wii" type="radio" name="radioNintendo" value="Wii" $RADIOWII$ tabindex="15"/>
+                <label for="Wii" xml:lang="en" lang="en">Wii</label>
+                <input id="WiiU" type="radio" name="radioNintendo" value="WiiU" $RADIOWIIU$ tabindex="16"/>
+                <label for="WiiU" xml:lang="en" lang="en">Wii U</label>
+                <input id="SwitchN" type="radio" name="radioNintendo" value="Switch" $RADIOSWITCH$ tabindex="17"/>
+                <label for="SwitchN" xml:lang="en" lang="en">Switch</label>
+            </p>
+
+            <button type="submit" tabindex="18">Conferma</button>
+
+        </fieldset>
+    </form>
+</div>

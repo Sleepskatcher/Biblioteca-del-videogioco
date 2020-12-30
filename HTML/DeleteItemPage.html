@@ -1,0 +1,81 @@
+<form action="../PHP/phpFormDeleteItemPage.php?menu=eliminavid" method="post">
+    <fieldset class="AddModifyItem">
+        <legend>Elimina videogioco dal catalogo</legend>
+
+        $ERRORDELETEITEMPAGE$
+
+        $DELETEITEMHIDDENCODEANDTIPEOFCONSOLE$
+
+        <p>Vengono mostrati tutti i dati del videogioco per la <span xml:lang="en" lang="en">console</span> che si vuole eliminare dal catalogo. Attenzione nessun campo è cliccabile e l'azione non è reversibile. Essere sicuri di voler eliminare il videogioco per questa determinata console. Nel caso siano presenti ancora copie noleggiate e/o prenotate non verrà eliminato il prodotto ma verranno messe le copie disponibili uguale a zero in modo tale che si possa aspettare di ritirare tutte le copie noleggiate. Quando tutte le copie noleggiate per questa <span xml:lang="en" lang="en">console</span> saranno state ritirate si può procedere all'eliminazione del prodotto</p>
+
+        $DELETEITEMVIDEOGAMEHIDDENCODE$
+
+        <label for="VideogameName">Titolo videogioco:</label>
+        <textarea id="VideogameName" rows="2" cols="100" placeholder="titolo videogioco" maxlength="200" name="vidName" disabled="disabled">$VALUEVIDEOGAMENAME$</textarea>
+
+        <label for="VideogameExitDate">Data di uscita:</label>
+        <input id="VideogameExitDate" type="date" name="vidExitDate" value="$VALUEVIDEOGAMEEXITDATE$" disabled="disabled"/>
+
+        <p>Pegi:</p>
+        <select name="vidPegi" disabled xml:lang="en" lang="en">
+            <option value="" disabled="disabled" xml:lang="en" lang="en">Pegi</option>
+            <option value="3" $SELCETPEGI3$>3</option>
+            <option value="7" $SELECTPEGI7$>7</option>
+            <option value="12" $SELECTPEGI12$>12</option>
+            <option value="16" $SELECTPEGI16$>16</option>
+            <option value="18" $SELECTPEGI18$>18</option>
+        </select>
+
+        <label for="VideogameKind">Genere videogioco:</label>
+        <textarea id="VideogameKind" rows="2" cols="100" placeholder="genere videogioco" maxlength="200" name="vidKind" disabled="disabled">$VALUEVIDEOGAMEKIND$</textarea>
+
+        <label for="VideogameDescription">Descrizione videogioco:</label>
+        <textarea id="VideogameDescription" rows="20" cols="100" placeholder="descrizione videogioco" maxlength="1000" name="vidDescription" disabled="disabled">$VALUEVIDEOGAMEDESCRIPTION$</textarea>
+
+        <p>Prezzo noleggio giornaliero:</p>
+        <input type="number" min="0.01" max="10" step=".01" name="vidPrice" value="$VALUEVIDEOGAMEPRICE$" disabled="disabled"/>
+
+        <p xml:lang="en" lang="en">Best Seller:</p>
+        <select name="vidBestSel" disabled="disabled">
+            <option value="" disabled="disabled" xml:lang="en" lang="en">Best Seller</option>
+            <option value="Si" $SELECTBESTSELLERSI$>Si</option>
+            <option value="No" $SELECTBESTSELLERNO$>No</option>
+        </select>
+
+        <p>Queste sono le copie che verranno eliminate dal catalogo. Assicurarsi di aver ritirato tutte le copie noleggiate</p>
+
+        <p xml:lang="en" lang="en">Microsoft:</p>
+        <input id="ItemXbox360" type="checkbox" name="ItemXbox360" value="Xbox360" $CHECKXBOX360$ disabled="disabled"/>
+        <label for="ItemXbox360"><span xml:lang="en" lang="en">Xbox</span> 360</label>
+        <p>Numero di copie tolte dal catalogo per Xbox 360:<input id="QXbox360" type="number" min="0" max="999" name="QXbox360" value="$VALUEXBOX360$" disabled="disabled"/></p>
+
+        <input id="ItemXboxOne" type="checkbox" name="ItemXboxOne" value="XboxOne" $CHECKXBOXONE$ disabled="disabled"/>
+        <label for="ItemXboxOne"><span xml:lang="en" lang="en">Xbox One</span></label>
+        <p>Numero di copie tolte dal catalogo per <span xml:lang="en" lang="en">Xbox One:</span> <input id="QXboxOne" type="number" min="0" max="999" name="QXboxOne" value="$VALUEXBOXONE$" disabled="disabled"/></p>
+
+        <p>Nintendo:</p>
+        <input id="ItemWii" type="checkbox" name="ItemWii" value="Wii" $CHECKWII$ disabled="disabled"/>
+        <label for="ItemWii"><span xml:lang="en" lang="en">Wii</span></label>
+        <p>Numero di copie tolte dal catalogo per <span xml:lang="en" lang="en">Wii</span>:<input id="QWii" type="number" min="0" max="999" name="QWii" value="$VALUEWII$" disabled="disabled"/></p>
+
+        <input id="ItemWiiU" type="checkbox" name="ItemWiiU" value="WiiU" $CHECKWIIU$ disabled="disabled"/>
+        <label for="ItemWiiU" xml:lang="en" lang="en">Wii U</label>
+        <p>Numero di copie tolte dal catalogo per <span xml:lang="en" lang="en">Wii U</span>:<input id="QWiiU" type="number" min="0" max="999" name="QWiiU" value="$VALUEWIIU$" disabled="disabled"/></p>
+
+        <input id="ItemSwitchN" type="checkbox" name="ItemSwitchN" value="Switch" $CHECKSWITCHN$ disabled="disabled"/>
+        <label for="ItemSwitchN" xml:lang="en" lang="en">Switch</label>
+        <p>Numero di copie tolte dal catalogo per <span xml:lang="en" lang="en">Switch</span>:<input id="QSwitchN" type="number" min="0" max="999" name="QSwitchN" value="$VALUESWITCHN$" disabled="disabled"/></p>
+
+        <p xml:lang="en" lang="en">Sony:</p>
+        <input id="ItemPlayStation3" type="checkbox" name="ItemPlayStation3" value="PlayStation3" $CHECKPLAYSTATION3$ disabled="disabled"/>
+        <label for="ItemPlayStation3"><span xml:lang="en" lang="en">PlayStation</span>3</label>
+        <p>Numero di copie tolte dal catalogo per <span xml:lang="en" lang="en">PlayStation</span>3:<input id="QPlayStation3" type="number" min="0" max="999" name="QPlayStation3" value="$VALUEPLAYSTATION3$" disabled="disabled"/></p>
+
+        <input id="ItemPlayStation4" type="checkbox" name="ItemPlayStation4" value="PlayStation4" $CHECKPLAYSTATION4$ disabled="disabled"/>
+        <label for="ItemPlayStation4"><span xml:lang="en" lang="en">PlayStation</span> 4</label>
+        <p>Numero di copie tolte dal catalogo per<span xml:lang="en" lang="en">PlayStation </span>4:<input id="QPlayStation4" type="number" min="0" max="999" name="QPlayStation4" value="$VALUEPLAYSTATION4$" disabled="disabled"/></p>
+
+        <button type="submit" tabindex="12">Conferma eliminazione</button>
+
+    </fieldset>
+</form>

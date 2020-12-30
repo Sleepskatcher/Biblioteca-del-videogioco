@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="it">
+    <head>
+        <link type="text/css" rel="stylesheet" href="../CSS/style.css" />
+        <link type="text/css" rel="stylesheet" href="../CSS/Stampa.css" />
+        <link type="text/css" rel="stylesheet" href="../CSS/Mobile_Tablet.css" />
+        <script src="../JAVASCRIPT/formvalidation.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>user page</title>
+    </head>
+    <body onload="loadUser()">
+        <a class="LinkHome" title="Questo link porta alla home" href="../PHP/phpPrincipal.php" tabindex="1"><img class="ArrowBack" alt="Freccia per tornare indietro" src="../IMMAGINI/LeftArrow.png"/>Torna alla <span xml:lang="en" lang="en">Home</span></a>
+        <div>
+
+            <form action="../PHP/phpFormUserPage.php" method="post">
+                <fieldset id="AccountPage">
+                    <legend xml:lang="en" lang="en">Account:</legend>
+
+                    $ERRORACCOUNTPAGE$
+
+                    <h2> $USERNAMEACCOUNT$ </h2>
+
+                    <label for="AccountName">Nome</label>
+                    <input id="AccountName" type="text" value="$ACCOUNTNAME$" disabled="disabled"/>
+
+                    <label for="AccountSurname">Cognome</label>
+                    <input id="AccountSurname" type="text" value="$ACCOUNTSURNAME$" disabled="disabled"/>
+
+                    <label for="AccountPassword"> <span xml:lang="en" lang="en">Password</span></label>
+                    <input id="AccountPassword" type="text" value="$ACCOUNTPASSWORD$" disabled="disabled"/>
+
+                    <label for="AccountChangePassword">Cambia <span xml:lang="en" lang="en">password</span></label>
+                    <input id="AccountChangePassword" title="Inserisci password" type="password" onkeyup="validateFormutentepass()" onfocusout="validateFormutentepass()" tabindex="2" placeholder="cambio password" minlength="5" maxlength="20" name="accountchangepassword"/>
+                    <p id="AvvisoChangePassword" class="JavaWarning"></p>
+
+                    <p id="RuleRegistration">Inserire una <span xml:lang="en" lang="en">password</span> di minimo 5 caratteri e massimo 20 caratteri. La <span xml:lang="en" lang="en">password</span> non deve contenere spazi.</p>
+
+                    <label for="AccountConfirmChangePassword">Conferma cambia <span xml:lang="en" lang="en">password</span></label>
+                    <input id="AccountConfirmChangePassword" title="Conferma password" type="password" onkeyup="confirmChangePass()" onfocusout="confirmChangePass()" tabindex="3" placeholder="conferma password" minlength="5" maxlength="20" name="accountconfirmchangepassword"/>
+                    <p id="AvvisoControlPass" class="JavaWarning"></p>
+
+                    <label for="AccountEmail"><span xml:lang="en" lang="en">Email</span></label>
+                    <input id="AccountEmail" type="text" value="$ACCOUNTEMAIL$" disabled="disabled"/>
+
+                    <label for="AccountChangeEmail">Cambio <span xml:lang="en" lang="en">email</span></label>
+                    <input id="AccountChangeEmail" title="Cambio email" type="email" onkeyup="controlChangeemail()" onfocusout="controlChangeemail()" tabindex="4" placeholder="cambio email" maxlength="30" name="accountchangeemail" value="$ACCOUNTCHANGEEMAIL$"/>
+                    <p id="AvvisoChangemail" class="JavaWarning"></p>
+
+                    <button type="reset" tabindex="5"><span xml:lang="en" lang="en">Reset</span></button>
+                    <button id="ConfirmButtonUserPage" type="submit" tabindex="6">Conferma</button>
+
+
+                </fieldset>
+            </form>
+
+            $ACCOUNTDELETEBUTTON$
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<form enctype="multipart/form-data" action="../PHP/phpSubAdminMenuFormAddItem.php?menu=inserimentovid" method="post">
+    <fieldset class="AddModifyItem">
+
+        <legend>Aggiungi videogioco</legend>
+
+        $ERRORSUBADMINMENUADDITEMPAGE$
+
+        <p>ATTENZIONE controlla che il videogioco che vuoi inserire non sia già disponibile nel catalogo, non creare dei doppioni!</p>
+
+        <p>Tutti i campi sono obbligatori. Inserire TUTTI i campi disponibili.</p>
+
+        <label for="VideogameNameA">Titolo videogioco:</label>
+        <textarea id="VideogameNameA" title="Inserisci titolo" onkeyup="controlTitle()" onfocusout="controlTitle()" rows="2" cols="100"  tabindex="12" placeholder="titolo videogioco" maxlength="200" name="vidName" required="required">$VALUEVIDEOGAMENAME$</textarea>
+        <p id="AvvisoVideogameTitle" class="JavaWarning"></p>
+
+        <label for="VideogameImageA">Copertina videogioco:</label>
+        <input id="VideogameImageA" title="Inserisci copertina videogioco" type="file" onchange="controlImage()" onclick="avvisoclickImage()" tabindex="13" name="vidImage" accept="image/jpeg, image/png" required="required"/>
+        <p>La dimensione massima dell'immagine non deve superare i 2 <abbr title="Mega Byte">MB</abbr>. Il nome dell'immagine non deve contenere caratteri speciali (e.g. ', ", / etc...).</p>
+        <p id="AvvisoImage" class="JavaWarning"></p>
+
+        <label for="VideogameExitDateA">Data di uscita:</label>
+        <input id="VideogameExitDateA" title="Inserisci data di uscita" type="date" onchange="controlDate()" onfocusout="controlDate()" tabindex="14" name="vidExitDate" value="$VALUEVIDEOGAMEEXITDATE$" required="required"/>
+        <p id="AvvisoDate" class="JavaWarning"></p>
+
+        <label for="VideogamePegiA" xml:lang="en" lang="en">Pegi:</label>
+        <select id="VideogamePegiA" title="Inserisci Pegi" tabindex="15" name="vidPegi" required="required">
+            <option value="" disabled="disabled" xml:lang="en" lang="en">Pegi</option>
+            <option value="3" $SELCETPEGI3$>3</option>
+            <option value="7" $SELECTPEGI7$>7</option>
+            <option value="12" $SELECTPEGI12$>12</option>
+            <option value="16" $SELECTPEGI16$>16</option>
+            <option value="18" $SELECTPEGI18$>18</option>
+        </select>
+
+        <label for="VideogameKindA">Genere videogioco:</label>
+        <textarea id="VideogameKindA" title="Inserisci genere videogioco" onchange="controlKind()" onfocusout="controlKind()" rows="2" cols="100" tabindex="16" placeholder="genere videogioco" maxlength="200" name="vidKind" required="required">$VALUEVIDEOGAMEKIND$</textarea>
+        <p id="AvvisoKind" class="JavaWarning"></p>
+
+
+        <label id="VidDescriptionA" for="VideogameDescriptionA">Descrizione videogioco:</label>
+        <textarea id="VideogameDescriptionA" title="Inserisci descrizione" onkeyup="controlDescription()" onfocusout="controlDescription()" rows="20" cols="100" tabindex="17" placeholder="descrizione videogioco" maxlength="1000" name="vidDescription" required="required">$VALUEVIDEOGAMEDESCRIPTION$</textarea>
+        <p id="AvvisoDescription" class="JavaWarning"></p>
+
+        <label for="VideogamePriceA">Prezzo noleggio giornaliero:</label>
+        <input id="VideogamePriceA" title="Inserisci prezzo noleggio giornaliero" onkeyup="controlPrice()" onfocusout="controlPrice()" type="number" tabindex="18" min="0.01" max="10" step=".01" name="vidPrice" value="$VALUEVIDEOGAMEPRICE$" required="required"/>
+        <p id="AvvisoPrice" class="JavaWarning"></p>
+
+        <label for="VideogameBestSellerA" xml:lang="en" lang="en">Best Seller:</label>
+        <select id="VideogameBestSellerA" title="Inserisci Best Seller" tabindex="19" name="vidBestSel" required="required">
+            <option value="" disabled="disabled" xml:lang="en" lang="en">Best Seller</option>
+            <option value="1" $SELECTBESTSELLERSI$>Si</option>
+            <option value="0" $SELECTBESTSELLERNO$>No</option>
+        </select>
+
+        <p class="NotAll">Questi campi non bisogna selezionarli tutti. Selezionarne almeno uno. Selezionare la <span xml:lang="en" lang="en">console</span> per cui é disponibile il videogioco e il numero di copie del videogioco per ogni <span xml:lang="en" lang="en">console</span></p>
+
+        <p xml:lang="en" lang="en">Microsoft:</p>
+
+        <input id="ItemXbox360A" title="Spunta Xbox360" onclick="controlCheckXbox360()" type="checkbox" tabindex="20" name="ItemXbox360" value="Xbox360" $CHECKXBOX360$/>
+        <label for="ItemXbox360A"><span xml:lang="en" lang="en">Xbox</span> 360</label>
+        <p>Inserire numero di copie per <span xml:lang="en" lang="en">Xbox</span> 360:<input id="QXbox360A" title="Inserisci copie Xbox360" onkeyup="controlXbox360()" onfocusout="controlXbox360()" type="number" tabindex="21" min="0" max="999" name="QXbox360" value="$VALUEXBOX360$"/></p>
+        <p id="AvvisoXbox360" class="JavaWarning"></p>
+
+        <input id="ItemXboxOneA" title="Spunta XboxOne" onclick="controlCheckXboxOne()" type="checkbox" tabindex="22" name="ItemXboxOne" value="XboxOne" $CHECKXBOXONE$/>
+        <label for="ItemXboxOneA"><span xml:lang="en" lang="en">Xbox One</span></label>
+        <p>Inserire numero di copie per <span xml:lang="en" lang="en">Xbox One</span>:<input id="QXboxOneA" title="Inserisci copie XboxOne" onkeyup="controlXboxOne()" onfocusout="controlXboxOne()" type="number" tabindex="23" min="0" max="999" name="QXboxOne" value="$VALUEXBOXONE$"/></p>
+        <p id="AvvisoXboxOne" class="JavaWarning"></p>
+
+
+
+        <p>Nintendo:</p>
+
+        <input id="ItemWiiA" title="Spunta Wii" onclick="controlCheckWii()" type="checkbox" tabindex="24" name="ItemWii" value="Wii" $CHECKWII$/>
+        <label for="ItemWiiA"><span xml:lang="en" lang="en">Wii</span></label>
+        <p>Inserire numero di copie per <span xml:lang="en" lang="en">Wii</span>:<input id="QWiiA" title="Inserisci copie Wii" onkeyup="controlWii()" onfocusout="controlWii()" type="number" tabindex="25" min="0" max="999" name="QWii" value="$VALUEWII$"/></p>
+        <p id="AvvisoWii" class="JavaWarning"></p>
+
+        <input id="ItemWiiUA" title="Spunta WiiU" onclick="controlCheckWiiU()" type="checkbox" tabindex="26" name="ItemWiiU" value="WiiU" $CHECKWIIU$/>
+        <label for="ItemWiiUA"><span  xml:lang="en" lang="en">Wii U</span></label>
+        <p>Inserire numero di copie per <span xml:lang="en" lang="en">Wii U</span>:<input id="QWiiUA" title="Inserisci copie WiiU" onkeyup="controlWiiU()" onfocusout="controlWiiU()" type="number" tabindex="27" min="0" max="999" name="QWiiU" value="$VALUEWIIU$"/></p>
+         <p id="AvvisoWiiU" class="JavaWarning"></p>
+
+        <input id="ItemSwitchNA" title="Spunta Switch" onclick="controlCheckSwitch()" type="checkbox" tabindex="28" name="ItemSwitchN" value="Switch" $CHECKSWITCHN$/>
+        <label for="ItemSwitchNA"><span xml:lang="en" lang="en">Switch</span></label>
+        <p>Inserire numero di copie per <span xml:lang="en" lang="en">Switch</span>:<input id="QSwitchNA" title="Inserisci copie Switch" onkeyup="controlSwitch()" onfocusout="controlSwitch()" type="number" tabindex="29" min="0" max="999" name="QSwitchN" value="$VALUESWITCHN$"/></p>
+        <p id="AvvisoSwitch" class="JavaWarning"></p>
+
+        <p xml:lang="en" lang="en">Sony:</p>
+        <input id="ItemPlayStation3A" title="Spunta PlayStation3" onclick="controlCheckPlay3()" type="checkbox" tabindex="30" name="ItemPlayStation3" value="PlayStation3" $CHECKPLAYSTATION3$/>
+        <label for="ItemPlayStation3A"><span xml:lang="en" lang="en">Playstation</span> 3</label>
+        <p>Inserire numero di copie per <span xml:lang="en" lang="en">Playstation</span> 3:<input id="QPlayStation3A" title="Inserisci copie PlayStation3" onkeyup="controlPlay3()" onfocusout="controlPlay3()" type="number" tabindex="31" min="0" max="999" name="QPlayStation3" value="$VALUEPLAYSTATION3$"/></p>
+        <p id="AvvisoPlay3" class="JavaWarning"></p>
+
+        <input id="ItemPlayStation4A" title="Spunta PlayStation4" onclick="controlCheckPlay4()" type="checkbox" tabindex="32" name="ItemPlayStation4" value="PlayStation4" $CHECKPLAYSTATION4$/>
+        <label for="ItemPlayStation4A"><span xml:lang="en" lang="en">Playstation</span> 4</label>
+        <p>Inserire numero di copie per <span xml:lang="en" lang="en">Playstation</span> 4:<input id="QPlayStation4A" title="Inserisci copie PlayStation4" onkeyup="controlPlay4()" onfocusout="controlPlay4()" type="number" tabindex="33" min="0" max="999" name="QPlayStation4" value="$VALUEPLAYSTATION4$"/></p>
+        <p id="AvvisoPlay4" class="JavaWarning"></p>
+
+
+        <button type="reset" tabindex="34"><span xml:lang="en" lang="en">Reset</span></button>
+        <button id="ConfirmButtonI" type="submit" tabindex="35">Conferma</button>
+
+    </fieldset>
+</form>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="it">
+    <head>
+        <link type="text/css" rel="stylesheet" href="../CSS/style.css" />
+        <link type="text/css" rel="stylesheet" href="../CSS/Stampa.css" />
+        <link type="text/css" rel="stylesheet" href="../CSS/Mobile_Tablet.css" />
+        <script src="../JAVASCRIPT/formvalidation.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Noleggio videogioco" />
+        <meta name="keywords" content="videogioco,videogiochi,videogame,videogames,gioco,giochi,noleggio" />
+        <meta name="author" content="Daniele Larosa,Margherita Mitillo,Anna Cisotto,Stefano Cavaliere" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>login page</title>
+    </head>
+    <body onload="loadLogin()">
+
+        <a class="LinkHome" title="Questo link porta alla Homepage" href="../PHP/phpPrincipal.php" tabindex="1"><img class="ArrowBack" alt="Freccia per tornare indietro" src="../IMMAGINI/LeftArrow.png"/>Torna alla <span xml:lang="en" lang="en">Home</span></a>
+
+        <div class="Container">
+            <form action="../PHP/phpFormLoginPage.php" method="post">
+                <fieldset>
+                   <legend xml:lang="en" lang="en">Login</legend>
+                    <img id="LockImage" src="../IMMAGINI/lock.png" alt="lock Image"/>
+                    <p class="ContainerTitle"><span xml:lang="en" lang="en">Login</span></p>
+
+                    $ERRORLOGINPAGE$
+
+                    <label for="UsernameLogin"><span xml:lang="en" lang="en">Username</span></label>
+                    <input id="UsernameLogin" type="text" onkeyup="validateFormUsername()" onfocusout="validateFormUsername()" title="Inserisci username" tabindex="2" placeholder="username" maxlength="20" name="exusername" value="$VALUEUSERNAMELOG$" required="required"/>
+                    <p id="AvvisoUs" class="JavaWarning"></p>
+
+                    <label for="PasswordLogin"><span xml:lang="en" lang="en">Password</span></label>
+                    <input id="PasswordLogin" type="password" onkeyup="validateFormPassword()" onfocusout="validateFormPassword()" title="Inserisci password" tabindex="3" placeholder="password" minlength="5" maxlength="20" name="expassword" required="required"/>
+                    <p id="AvvisoPw" class="JavaWarning"></p>
+
+                    <div class="Buttons">
+                        <button class="ResetButton" type="reset" tabindex="4"><span xml:lang="en" lang="en">Reset</span></button>
+                        <button id="ConfirmButton" type="submit" tabindex="5" name="signin-button">Accedi</button>
+                    </div>
+
+
+                    <p class="RegistrationSentence">Non hai un <span xml:lang="en" lang="en">account</span>? Crealo <a title="Questo link porta alla pagina di registrazione" href="../PHP/phpRegistrationPage.php" tabindex="6">QUI</a></p>
+
+                </fieldset>
+            </form>
+        </div>
+
+    </body>
+</html>

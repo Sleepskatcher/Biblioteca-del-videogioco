@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="it">
+    <head>
+        <link type="text/css" rel="stylesheet" href="../CSS/style.css" />
+        <link type="text/css" rel="stylesheet" href="../CSS/Stampa.css" />
+        <link type="text/css" rel="stylesheet" href="../CSS/Mobile_Tablet.css" />
+        <script src="../JAVASCRIPT/formvalidation.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Registration page</title>
+    </head>
+    <body onload="loadRegistration()">
+
+        <a class="LinkHome" title="Questo link porta alla home" href="../PHP/phpPrincipal.php" tabindex="1"><img class="ArrowBack" alt="Freccia per tornare indietro" src="../IMMAGINI/LeftArrow.png"/>Torna alla <span xml:lang="en" lang="en">Home</span></a>
+
+        <div class="Container">
+            <form action="../PHP/phpFormRegistrationPage.php" method="post">
+                <fieldset>
+                    <legend>Registrazione</legend>
+
+                    $ERRORREGISTRATIONPAGE$
+
+                    <p class="ContainerTitle">Registrazione</p>
+                    <p class="RegistrationSentence">Attenzione! È obbligatorio compilare tutti i campi.</p>
+
+                    <label for="name">Nome</label>
+                    <input id="name" type="text" onkeyup="validateFormName()" onfocusout="validateFormName()" title="Inserisci nome" tabindex="2" placeholder="nome" maxlength="20" name="name" value="$VALUENAME$" required="required"/>
+                    <p id="Avvisonome" class="JavaWarning"></p>
+
+                    <label for="surname">Cognome</label>
+                    <input id="surname" type="text" onkeyup="validateFormSurname()" onfocusout="validateFormSurname()" title="Inserisci cognome" tabindex="3" placeholder="cognome" maxlength="20" name="surname" value="$VALUESURNAME$" required="required"/>
+                    <p id="Avvisocognome" class="JavaWarning"></p>
+
+                    <label for="username" xml:lang="en" lang="en">Username</label>
+                    <input id="username" type="text" onkeyup="validateFormUsernameReg()" onfocusout="validateFormUsernameReg()" title="Inserisci Username. Lo username non deve contenere spazi." tabindex="4" placeholder="username" maxlength="20" name="username" value="$VALUEUSERNAME$" required="required"/>
+                    <p id="Avvisousername" class="JavaWarning"></p>
+                    <p class="RegistrationSentence">Lo <span xml:lang="en" lang="en">username</span> non deve contenere spazi.</p>
+
+                    <label for="email" xml:lang="en" lang="en">Email</label>
+                    <input id="email" type="email" onkeyup="validateFormemail()" onfocusout="validateFormemail()" title="Inserire un'email valida. Ad esempio: mariorossi@gmail.com" tabindex="5" placeholder="email" maxlength="30" name="email" value="$VALUEEMAIL$" required="required"/>
+                    <p id="Avvisoemail" class="JavaWarning"></p>
+                    <p class="RegistrationSentence">Inserire un' <span xml:lang="en" lang="en">email</span> valida. Ad esempio: mariorossi@gmail.com</p>
+
+                    <label for="password" xml:lang="en" lang="en">Password</label>
+                    <input id="password" type="password" onkeyup="validateFormPasswordReg()" onfocusout="validateFormPasswordReg()" title="Inserire una password di minimo 5 caratteri e massimo 20 caratteri. La password non deve contenere spazi." tabindex="6" placeholder="password" minlength="5" maxlength="20" name="password" required="required"/>
+                    <p id="Avvisopass" class="JavaWarning"></p>
+                    <p class="RegistrationSentence">Inserire una <span xml:lang="en" lang="en">password</span> di minimo 5 caratteri e massimo 20 caratteri. La <span xml:lang="en" lang="en">password</span> non deve contenere spazi.</p>
+
+                    <label for="passwordconfirmed">Conferma <span xml:lang="en" lang="en">password</span></label>
+                    <input id="passwordconfirmed" type="password" onkeyup="validateFormConfPassword()" onfocusout="validateFormConfPassword()" title="Conferma password" tabindex="7" placeholder="conferma password" minlength="5" maxlength="20" name="passwordconfirmed" required="required"/>
+                    <p id="Avvisoconfermapass" class="JavaWarning"></p>
+
+                    <div class="Buttons">
+                        <button class="ResetButton" type="reset" tabindex="8"><span xml:lang="en" lang="en">Reset</span></button>
+                        <button id="ConfirmButtonR" type="submit" tabindex="9">Iscriviti</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
+
